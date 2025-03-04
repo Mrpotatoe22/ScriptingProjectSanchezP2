@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KeyInput : MonoBehaviour
+public class ButtonInput : MonoBehaviour
 {
-
     public Image graphic;
     public Sprite standard;
     public Sprite downgfx;
@@ -24,9 +23,9 @@ public class KeyInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool down = Input.GetKeyDown(KeyCode.Space);
-        bool held = Input.GetKey(KeyCode.Space);
-        bool up = Input.GetKeyUp(KeyCode.Space);
+        bool down = Input.GetButtonDown("Jump");
+        bool held = Input.GetButton("Jump");
+        bool up = Input.GetButtonUp("Jump");
 
         if (down)
         {
@@ -48,5 +47,6 @@ public class KeyInput : MonoBehaviour
         boolDisplay1.text = " " + down;
         boolDisplay2.text = " " + held;
         boolDisplay3.text = " " + held;
+
     }
 }
